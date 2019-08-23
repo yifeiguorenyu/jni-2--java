@@ -21,6 +21,8 @@ public class Simple {
 	public native String getStirngnaturePassword() ;
 	
 	//静态方法
+	//System.load 加载服务器上或者别的地方的动态库
+	//System.loadlibrary 加载apk中的动态库
 	static {
 		System.load("F:/c#demo/Project2/x64/Debug/Project2.dll");
 	}
