@@ -8,7 +8,10 @@ public class Simple {
 	// 在vs中实现头文件里的方法
 	//生成dll文件
 	//java system.load(xxx.dll)
-	//生成dll visual studio 中 调试--->属性--->常规 ------>目标文件扩展名
+	//生成dll visual studio 中 调试--->属性--->常规 ------>项目默认值---->配置类型----->应用程序--->动态库(.dll)
+	//visual studio 生成--->配置管理器---->选择平台(x64)
+	//visual studio 生成--->生成解决方案
+	//java中system.load()
 	public static void main(String[] args) {
 		String signuture = new Simple().getStirngnaturePassword();
 		System.out.println("秘钥="+signuture);
@@ -16,4 +19,9 @@ public class Simple {
 	
 	//写好本地的native方法 从dll中拿到
 	public native String getStirngnaturePassword() ;
+	
+	//静态方法
+	static {
+		System.load("F:/c#demo/Project2/x64/Debug/Project2.dll");
+	}
 }
